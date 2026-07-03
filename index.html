@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Story of PrepPal — Jason Xu</title>
+<title>10 lessons I learned at Google — Jason Xu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..800,0..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -71,6 +71,7 @@
   .slide.active > *:nth-child(3) { animation-delay: 340ms; }
   .slide.active > *:nth-child(4) { animation-delay: 440ms; }
   .slide.active > *:nth-child(5) { animation-delay: 520ms; }
+  .slide.active > *:nth-child(6) { animation-delay: 600ms; }
 
   @keyframes rise {
     from { opacity: 0; transform: translateY(12px); }
@@ -104,8 +105,8 @@
     font-weight: 600;
     font-variation-settings: 'opsz' 144, 'SOFT' 30, 'wght' 600;
     letter-spacing: -0.025em;
-    line-height: 1.02;
-    font-size: clamp(3.5rem, 7.5vw, 7.2rem);
+    line-height: 1.05;
+    font-size: clamp(2.8rem, 6vw, 5.8rem);
     margin-bottom: 0.4em;
     color: var(--fg);
   }
@@ -115,7 +116,7 @@
     font-variation-settings: 'opsz' 144, 'SOFT' 80, 'wght' 300;
     letter-spacing: -0.04em;
     line-height: 0.98;
-    font-size: clamp(4.5rem, 11.5vw, 11rem);
+    font-size: clamp(3.8rem, 9.5vw, 9rem);
     color: var(--fg);
   }
   .marker {
@@ -124,10 +125,9 @@
     font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 300;
     letter-spacing: -0.04em;
     line-height: 0.95;
-    font-size: clamp(3.2rem, 6.5vw, 5.5rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     color: var(--accent);
     margin-bottom: 0.35em;
-    /* Tiny vermillion dot underline */
     position: relative;
   }
   .marker::after {
@@ -140,67 +140,38 @@
   }
 
   .accent { color: var(--accent); font-style: italic; font-variation-settings: 'SOFT' 60; }
-  .accent.large { font-size: clamp(1.8rem, 2.5vw, 2.8rem); }
+  .accent.large { font-size: clamp(1.6rem, 2.2vw, 2.5rem); }
   .muted  { color: var(--muted); }
   .faint  { color: var(--faint); }
 
   .body {
     font-family: 'Fraunces', Georgia, serif;
     font-variation-settings: 'opsz' 22, 'SOFT' 40, 'wght' 400;
-    font-size: clamp(1.4rem, 2vw, 2.2rem);
+    font-size: clamp(1.3rem, 1.8vw, 2rem);
     line-height: 1.55;
-    max-width: 58ch;
+    max-width: 62ch;
     color: var(--fg);
   }
   .body.large {
-    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+    font-size: clamp(1.6rem, 2.2vw, 2.5rem);
     font-variation-settings: 'opsz' 36, 'SOFT' 50, 'wght' 400;
   }
   .author {
-    font-size: clamp(2.2rem, 3.2vw, 3.8rem);
+    font-size: clamp(1.8rem, 2.8vw, 3.2rem);
     font-variation-settings: 'opsz' 40, 'SOFT' 50, 'wght' 450;
     color: var(--muted);
     margin-top: 2rem;
   }
   .body p + p { margin-top: 1.3em; }
-  .label {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: clamp(0.9rem, 1.2vw, 1.3rem);
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    color: var(--faint);
-    margin-bottom: 0.6em;
-  }
-
-  /* The "Shipped." style decisive accent block */
-  .stamp {
-    font-family: 'Fraunces', Georgia, serif;
-    font-style: italic;
-    font-weight: 500;
-    font-variation-settings: 'opsz' 144, 'SOFT' 80, 'wght' 500;
-    font-size: clamp(2.2rem, 3.2vw, 3rem);
+  
+  .body strong {
     color: var(--accent);
-    letter-spacing: -0.03em;
-    position: relative;
-    display: inline-block;
-    padding: 0.05em 0.3em;
+    font-variation-settings: 'opsz' 22, 'SOFT' 40, 'wght' 700;
   }
-  .stamp::before {
-    content: '';
-    position: absolute;
-    inset: 0.15em -0.05em;
-    border: 2px solid var(--accent);
-    border-radius: 2px;
-    opacity: 0.85;
-    transform: rotate(-1.5deg);
-  }
-
-  .row { display: flex; gap: 4rem; align-items: flex-start; }
-  .col { flex: 1; max-width: 32rem; }
-  .col + .col { border-left: 1px solid var(--rule); padding-left: 4rem; }
+  
   .breadcrumb {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: clamp(0.95rem, 1.3vw, 1.4rem);
+    font-size: clamp(0.85rem, 1.1vw, 1.2rem);
     text-transform: uppercase;
     letter-spacing: 0.32em;
     color: var(--faint);
@@ -217,50 +188,6 @@
     margin-bottom: 1.5rem;
   }
 
-  /* ===== Toolkit list rows ===== */
-  .model-row { margin-bottom: 1.8rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
-  .model-row .name {
-    font-family: 'Fraunces', Georgia, serif;
-    font-variation-settings: 'opsz' 100, 'SOFT' 60, 'wght' 600;
-    font-size: clamp(1.8rem, 2.8vw, 2.8rem);
-    color: var(--accent);
-    margin-right: 0.4em;
-    font-style: italic;
-  }
-  .model-row .role {
-    color: var(--muted);
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: clamp(1.4rem, 2vw, 2rem);
-  }
-  .model-row .desc {
-    color: var(--muted);
-    margin-top: 0.4em;
-    font-size: clamp(1.15rem, 1.6vw, 1.6rem);
-    line-height: 1.5;
-    font-family: 'Fraunces', Georgia, serif;
-    font-variation-settings: 'opsz' 18, 'wght' 400;
-  }
-
-  /* Mono code-style block for AI prompt examples */
-  .mono {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.92em;
-    background: var(--bg-deep);
-    padding: 0.15em 0.45em;
-    border-radius: 3px;
-    color: var(--fg);
-  }
-  .mono-block {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.92em;
-    color: var(--muted);
-    padding: 1em 1.2em;
-    border-left: 2px solid var(--accent);
-    background: rgba(199, 57, 43, 0.03);
-    line-height: 1.7;
-    margin: 0.8em 0;
-  }
-
   /* ===== Brand logos (slide 1) ===== */
   .brands {
     display: flex;
@@ -270,10 +197,9 @@
     margin-top: 2.5rem;
   }
   .brand-logo {
-    height: 5.5rem;
+    height: 4.5rem;
     width: auto;
     opacity: 0.88;
-    /* Desaturate brand colors + warm-tone to match cream/ink palette */
     filter: grayscale(100%) brightness(0.45) sepia(18%);
     transition: opacity 200ms, filter 200ms;
   }
@@ -281,7 +207,6 @@
     opacity: 1;
     filter: grayscale(100%) brightness(0.3) sepia(22%);
   }
-  /* Vermillion dot separator */
   .brand-dot {
     width: 8px;
     height: 8px;
@@ -290,7 +215,6 @@
     opacity: 0.85;
   }
 
-  /* Headshot (slide 1) — small circular masthead portrait */
   .headshot {
     width: 5.5rem;
     height: 5.5rem;
@@ -299,56 +223,50 @@
     margin: 0 auto 1.5rem;
     border: 2px solid var(--rule);
     box-shadow: 0 1px 3px var(--paper-shadow);
-    /* Subtle warm tone match for B&W headshots */
     filter: sepia(8%) saturate(0.95);
   }
 
-  /* PrepPal product shot (slide 8) — paired beside the body text */
-  .year1-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    margin-top: 1.5rem;
-  }
-  .product-shot {
-    width: 100%;
-    max-width: 24rem;
-    border-radius: 8px;
-    border: 1px solid var(--rule);
-    box-shadow: 0 4px 16px var(--paper-shadow), 0 1px 3px var(--paper-shadow);
+  .ballmer-large, .slide-image {
+    width: clamp(14rem, 25vh, 22rem);
+    height: clamp(14rem, 25vh, 22rem);
+    border-radius: 12px;
+    object-fit: cover;
+    align-self: center;
+    margin: 1.5rem 0;
+    border: 2px solid var(--rule);
+    box-shadow: 0 4px 15px var(--paper-shadow);
+    filter: sepia(5%) saturate(1.1);
   }
 
-  /* LinkedIn QR (slide 17) — portrait card; render large so QR is scannable */
-  .qr {
-    height: 65vh;
-    max-height: 48rem;
-    width: auto;
-    margin: 1.5rem auto;
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 2px 12px var(--paper-shadow);
-  }
-
-  /* Role tagline under brand wordmarks */
   .role-line {
     font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(0.95rem, 1.3vw, 1.4rem);
+    font-size: clamp(0.85rem, 1.1vw, 1.2rem);
     text-transform: uppercase;
     letter-spacing: 0.32em;
     color: var(--faint);
     margin-top: 1.5rem;
   }
 
-  /* ===== QR placeholder ===== */
-  .qr-placeholder {
-    width: 12rem; height: 12rem;
-    border: 2px dashed var(--faint);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--faint); font-size: 0.85rem;
+  .attribution {
     font-family: 'JetBrains Mono', monospace;
-    margin: 2rem auto;
-    background: var(--bg-deep);
+    font-size: clamp(0.68rem, 0.9vw, 0.95rem);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--faint);
+    margin-top: 2.2rem;
+    font-style: italic;
+    opacity: 0.75;
+  }
+
+  .attribution a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 150ms;
+  }
+
+  .attribution a:hover {
+    color: var(--accent);
   }
 
   /* ===== Bottom nav ===== */
@@ -362,7 +280,7 @@
     border: 1px solid var(--rule);
     border-radius: 999px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(0.85rem, 1.1vw, 1.1rem);
+    font-size: clamp(0.8rem, 1vw, 1rem);
     color: var(--muted);
     transition: opacity 200ms;
     z-index: 100;
@@ -414,12 +332,10 @@
   }
   .deck.overview .slide h1,
   .deck.overview .slide .display { font-size: 1rem; }
-  .deck.overview .slide .marker { font-size: 0.9rem; }
+  .deck.overview .slide .marker { font-size: 0.8rem; }
   .deck.overview .slide .marker::after { display: none; }
   .deck.overview .slide .body { font-size: 0.55rem; max-width: none; line-height: 1.4; }
   .deck.overview .slide .breadcrumb { font-size: 0.45rem; margin-top: 0.5rem; }
-  .deck.overview .slide .stamp { font-size: 0.8rem; }
-  .deck.overview .slide .stamp::before { display: none; }
   .deck.overview .slide:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
@@ -442,7 +358,7 @@
   <!-- Slide 1: Title -->
   <section class="slide center" data-title="Title">
     <img src="images/headshot.jpg" alt="Jason Xu" class="headshot" onerror="this.style.display='none'" />
-    <h1>The Story of <span class="accent">PrepPal</span></h1>
+    <h1>10 lessons I learned<br/>at <span class="accent">Google</span></h1>
     <div class="author">
       Jason Xu
     </div>
@@ -451,239 +367,128 @@
       <span class="brand-dot"></span>
       <img src="logos/alibaba.svg" alt="Alibaba" class="brand-logo" />
     </div>
-    <div class="role-line">AI / ML Product Leader</div>
+    <div class="role-line">Reflections on Attitude, Collaboration, & Execution</div>
+    <div class="attribution">Loosely based on <a href="https://addyosmani.com/blog/21-lessons/" target="_blank">Addy’s presentation</a></div>
   </section>
 
-  <!-- Slide 2: Voice -->
-  <section class="slide left" data-title="Voice is human">
-    <h1>Voice is the last thing<br/>left that's human.</h1>
-    <div class="body large muted" style="margin-top: 2.5rem;">
-      AI will write every word.<br/>
-      The only thing left is how you say it.
-    </div>
-    <p class="accent large" style="margin-top: 2rem;">
-      That’s what drew me to voice.
-    </p>
-  </section>
-
-  <!-- Slide 3: Built for one -->
-  <section class="slide left" data-title="Built for one person">
-    <h1>I built it for:</h1>
-    <div class="body" style="margin-top: 2rem;">
-      <p>An international candidate<br/>interviewing for jobs in the US.</p>
-      <p class="muted">
-        It’s 11 PM. Tutor offline, roommate asleep,<br/>
-        and the interview is in 9 hours.
-      </p>
-      <p class="accent">
-        She needs a coach at 3 AM—<br/>
-        in her time zone, on her terms.
-      </p>
-    </div>
-  </section>
-
-  <!-- Slide: DEMO -->
-  <section class="slide center" data-title="DEMO">
-    <div class="display accent">DEMO</div>
-  </section>
-
-  <!-- Slide 4: Divider — Journey -->
-  <section class="slide center" data-title="My 1-Year Journey">
-    <div class="display">My 1-Year Journey</div>
-    <div class="breadcrumb" style="margin-top: 3rem;">Month 1 · Month 6 · Month 9 · Year 1</div>
-  </section>
-
-  <!-- Slide 6: Month 1 -->
-  <section class="slide left" data-title="Month 1">
-    <div class="marker">Month 1</div>
-    <h1>Pretending to be a programmer.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">Me + Gemini in a browser. Copy, paste, pray.</p>
-      <p class="muted">
-        I pretended to be the programmer while the AI wrote the code.
-      </p>
-      <p class="accent" style="font-style: italic; margin-top: 1.5rem;">
-        New tools need new ways of working.
-      </p>
-    </div>
-  </section>
-
-  <!-- Slide 7: Month 6 -->
-  <section class="slide left" data-title="Month 6: Google lesson">
-    <div class="marker">Month 6</div>
-    <h1>Remembering what<br/>I learned at Google.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">LLMs are the 100x Google engineers.</p>
-      <p class="muted">
-        Help them with things they can't do themselves.
-      </p>
-      <p class="muted">
-        Don't slow them down when they're working.
-      </p>
-      <p class="accent" style="font-style: italic; margin-top: 1.5rem;">
-        Design the process around a 100x Google engineer.
-      </p>
-    </div>
-  </section>
-
-  <!-- Slide 8: Month 9 -->
-  <section class="slide left" data-title="Month 9: Shipping was just the start">
-    <div class="marker">Month 9</div>
-    <h1>Shipping was just the start.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p>The job stopped being "build."</p>
-      <p class="muted">
-        It became marketing.<br/>
-        Support. Ops.<br/>
-        Everything I hadn't planned for.
-      </p>
-    </div>
-  </section>
-
-  <!-- Slide 9: Year 1 -->
-  <section class="slide left" data-title="Year 1: I shipped">
-    <div class="marker">Year 1</div>
-    <h1>I couldn't have done this.</h1>
-    <div class="year1-grid">
-      <div class="body large">
-        <p>Real-time voice interviews.<br/>Finance. Tech. Business.<br/>PrepPal plays any role.</p>
-        <p class="accent">
-          AI didn't make me smarter —<br/>
-          it made me brave enough to start.
-        </p>
-      </div>
-      <img src="images/preppal.png" alt="PrepPal product screenshot" class="product-shot" onerror="this.style.display='none'" />
-    </div>
-  </section>
-
-  <!-- Slide 10: Divider — The Team -->
-  <section class="slide center" data-title="The Team">
-    <div class="display">The Team.</div>
-  </section>
-
-  <!-- Slide 11: My AI co-workers -->
-  <section class="slide left" data-title="My AI co-workers">
-    <h1>My AI co-workers.</h1>
-    <div style="margin-top: 2rem;">
-      <div class="model-row">
-        <span class="name">Gemini</span><span class="role">— the thinker.</span>
-        <div class="desc">Fast, opinionated, pushes back.</div>
-      </div>
-      <div class="model-row">
-        <span class="name">ChatGPT</span><span class="role">— the second opinion.</span>
-        <div class="desc">Past its peak. Still useful.</div>
-      </div>
-      <div class="model-row">
-        <span class="name">Claude</span><span class="role">— the builder.</span>
-        <div class="desc">Writes the code. Runs the agent.<br/>Keeps going until it ships.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Slide 12: When Claude got expensive -->
-  <section class="slide left" data-title="When Claude got expensive">
-    <h1>When Claude got too expensive.</h1>
-    <p class="body muted" style="margin-top: 1.5rem;">I needed cheaper hands.</p>
-    <div style="margin-top: 2rem;">
-      <div class="model-row">
-        <span class="name">DeepSeek</span><span class="role">— the workhorse.</span>
-        <div class="desc">Coding tasks at a fraction of the cost.</div>
-      </div>
-      <div class="model-row">
-        <span class="name">Qwen</span><span class="role">— the specialist.</span>
-        <div class="desc">20 parallel jobs with strict instructions.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Slide 13: Alibaba -->
-  <section class="slide left" data-title="What Alibaba taught me about AI">
-    <h1>What Alibaba taught me<br/>about AI.</h1>
+  <!-- Slide 2: Lesson 1 - User Obsession -->
+  <section class="slide left" data-title="01 · User Obsession">
+    <h1>1. The best engineers are obsessed<br/>with solving user problems.</h1>
+    <img src="images/steve_ballmer_yelling.jpg" alt="Steve Ballmer yelling developers" class="ballmer-large" onerror="this.style.display='none'" />
     <div class="body" style="margin-top: 1.5rem;">
       <p class="muted">
-        Alibaba re-org’d every quarter—new<br/>
-        teams, new handoffs. It was terrible.
-      </p>
-      <p class="accent">
-        Working with AI is organizational design<br/>
-        at the speed of weeks.
+        <strong>Personal Learning:</strong> A touching movie is based on personal experience, but about the character. Best PMs aren't building for themselves, they see an user pain point and try to address them.
       </p>
     </div>
   </section>
 
-  <!-- Slide 14: Divider — Lessons -->
-  <section class="slide center" data-title="Lessons">
-    <div class="display">Lessons.</div>
-  </section>
-
-  <!-- Slide 15: Stay one level above -->
-  <section class="slide left" data-title="Stay one level above">
-    <h1>Stay one level above<br/>your AI.</h1>
-    <div class="body" style="margin-top: 2rem;">
-      <div class="label">AI operates here</div>
-      <div class="mono-block">
-        "Option A, B, or C?"
-      </div>
-      <div class="label" style="margin-top: 1.5rem; color: var(--accent);">You operate here</div>
-      <div class="mono-block" style="color: var(--fg);">
-        "Should we build this at all?"
-      </div>
-      <p class="accent" style="margin-top: 2rem;">
-        That is your job.
+  <!-- Slide 3: Lesson 2 - Value of Time -->
+  <section class="slide left" data-title="02 · Value of Time">
+    <h1>2. Eventually, time becomes worth<br/>more than money.</h1>
+    <img src="images/google_cafeteria.jpg" alt="Google cafeteria free food" class="slide-image" onerror="this.style.display='none'" />
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> There are some problems money can solve, and some things only time can resolve—learn to tell the difference. Eventually, you realize that money can always be found, but time never can.
       </p>
     </div>
   </section>
 
-  <!-- Slide 16: A new value chain. -->
-  <section class="slide left" data-title="A new value chain">
-    <h1>A new value chain.</h1>
-    <div class="row" style="margin-top: 2.5rem;">
-      <div class="col">
-        <div class="label">Before AI</div>
-        <div class="body large muted" style="line-height: 1.7;">
-          High coordination tax.<br/>
-          Boundaries are fixed to survive team handoffs.
-        </div>
-      </div>
-      <div class="col">
-        <div class="label" style="color: var(--accent);">With AI</div>
-        <div class="body large" style="line-height: 1.7;">
-          Zero communication overhead.<br/>
-          Boundaries are fluid; refactoring is a weekend task.
-        </div>
-      </div>
+  <!-- Slide 4: Lesson 3 - Decision Velocity -->
+  <section class="slide left" data-title="03 · Type 1 vs. Type 2 Decisions">
+    <h1>3. Bias towards action. Ship.</h1>
+    <img src="images/decision_doors.jpg" alt="Type 1 vs Type 2 Decisions" class="slide-image" onerror="this.style.display='none'" />
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> Understand the difference between Type 1 and Type 2 decisions to unlock velocity and resolution.
+      </p>
     </div>
-    <p class="accent large" style="margin-top: 2.5rem;">
-      Production when coordination cost goes to zero.
-    </p>
   </section>
 
-  <!-- Slide 17: Your story -->
-  <section class="slide center" data-title="Your story">
-    <h1>Your story can start<br/>the same way.</h1>
+  <!-- Slide 5: Lesson 4 - Compounding -->
+  <section class="slide left" data-title="04 · Compounding">
+    <h1>4. There are no shortcuts,<br/>but there is compounding.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> You can rely on brute force and high-power algorithms, but the true return comes from knowing what worked, what didn’t, and how to apply it next time. Compounding experience is the highest ROI.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 6: Lesson 5 - Getting to Right Together -->
+  <section class="slide left" data-title="05 · Getting to Right Together">
+    <h1>5. Being right is cheap. Getting to<br/>right together is the real work.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> There are a lot of smart people at Google and they’re mostly right. Focusing that intelligence onto a real problem is where things really pay off.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 7: Lesson 6 - Alignment is Speed -->
+  <section class="slide left" data-title="06 · Alignment is Speed">
+    <h1>6. Most “slow” teams are actually<br/>misaligned teams.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> Velocity is lost in handoffs and conflicting priorities. Clarifying interfaces, direction, and priorities is the ultimate speed hack.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 8: Lesson 7 - Admitting What You Don't Know -->
+  <section class="slide left" data-title="07 · Safety through Vulnerability">
+    <h1>7. Admitting what you don’t know creates more safety than pretending you do.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> When you're in a room with many smart people, sometimes it’s better to just say: "Hey, I’m not sure what the best approach here is, what do you think?"
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 9: Lesson 8 - Goodhart's Law -->
+  <section class="slide left" data-title="08 · Goodhart's Law">
+    <h1>8. When a measure becomes a target, it stops measuring.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> When you have really smart people, simple metrics don't work, it quickly becomes a game. Google tried to solve this with "OKRs," but they have since become the new "KPIs."
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 10: Lesson 9 - Clarity over Complexity -->
+  <section class="slide left" data-title="09 · Clarity over Complexity">
+    <h1>9. Clarity is seniority. Cleverness is overhead.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> This happens very often at Google: everyone is smart and wants to prove themselves by re-implementing an existing system with a different trade-off. Optimize for comprehension, not elegance. Choose boring, standard, well-understood tools where you are not uniquely paid to innovate.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 11: Lesson 10 - Think 100x -->
+  <section class="slide left" data-title="10 · Think 100x">
+    <h1>10. Think 100x.</h1>
+    <div class="body" style="margin-top: 1.5rem;">
+      <p class="muted">
+        <strong>Personal Learning:</strong> When looking at things at 100x scale, everything is magnified, what works and what doesn't. This helps you better understand what you're building and the trade-offs you made, implicitly or explicitly. Also, if you're lucky and it does become 100x, you're already ahead of the competition.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 12: Outro / Q&A -->
+  <section class="slide center" data-title="Summary">
+    <h1>Thank You.</h1>
     <div class="body large muted" style="margin-top: 2rem;">
-      I'm not a coder.<br/>
-      I shipped a real product.
+      Stay curious. Stay humble.<br/>
+      Remember that the work is always about the people.
     </div>
-    <p class="accent large" style="margin-top: 2rem;">
-      Whatever you've been waiting to build —<br/>
-      you can build it now.
-    </p>
-  </section>
-
-  <!-- Slide 18: Questions -->
-  <section class="slide center" data-title="Questions">
-    <h1>Questions?</h1>
-    <img src="images/linkedin-qr.jpg" alt="LinkedIn QR" class="qr"
-         onerror="this.outerHTML='<div class=&quot;qr-placeholder&quot;>[ LinkedIn QR ]</div>'" />
-    <div class="body muted">preppal.co</div>
+    <div class="breadcrumb" style="margin-top: 3rem;">Lessons Learned · Jason Xu</div>
   </section>
 
 </div>
 
 <div class="nav" id="nav">
   <button id="prev" aria-label="Previous">←</button>
-  <div class="counter" id="counter">1 / 18</div>
+  <div class="counter" id="counter">1 / 12</div>
   <button id="next" aria-label="Next">→</button>
   <button id="overview-btn" title="Overview (O)">⊞</button>
   <button id="fs-btn" title="Fullscreen (F)">⛶</button>
