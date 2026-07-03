@@ -106,7 +106,7 @@
     font-variation-settings: 'opsz' 144, 'SOFT' 30, 'wght' 600;
     letter-spacing: -0.025em;
     line-height: 1.05;
-    font-size: clamp(2.8rem, 6vw, 5.8rem);
+    font-size: clamp(3.36rem, 7.2vw, 6.96rem);
     margin-bottom: 0.4em;
     color: var(--fg);
   }
@@ -147,7 +147,7 @@
   .body {
     font-family: 'Fraunces', Georgia, serif;
     font-variation-settings: 'opsz' 22, 'SOFT' 40, 'wght' 400;
-    font-size: clamp(1.3rem, 1.8vw, 2rem);
+    font-size: clamp(2.6rem, 3.6vw, 4rem);
     line-height: 1.55;
     max-width: 62ch;
     color: var(--fg);
@@ -227,14 +227,35 @@
   }
 
   .ballmer-large, .slide-image {
-    width: clamp(14rem, 25vh, 22rem);
-    height: clamp(14rem, 25vh, 22rem);
+    width: clamp(28rem, 50vh, 44rem);
+    height: clamp(28rem, 50vh, 44rem);
     border-radius: 12px;
     object-fit: cover;
     align-self: center;
     margin: 1.5rem 0;
     border: 2px solid var(--rule);
     box-shadow: 0 4px 15px var(--paper-shadow);
+    filter: sepia(5%) saturate(1.1);
+  }
+
+  .image-container-zoomed {
+    width: clamp(28rem, 50vh, 44rem);
+    height: clamp(28rem, 50vh, 44rem);
+    border-radius: 12px;
+    align-self: center;
+    margin: 1.5rem 0;
+    border: 2px solid var(--rule);
+    box-shadow: 0 4px 15px var(--paper-shadow);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-container-zoomed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.25);
     filter: sepia(5%) saturate(1.1);
   }
 
@@ -358,7 +379,7 @@
   <!-- Slide 1: Title -->
   <section class="slide center" data-title="Title">
     <img src="images/headshot.jpg" alt="Jason Xu" class="headshot" onerror="this.style.display='none'" />
-    <h1>10 lessons I learned<br/>at <span class="accent">Google</span></h1>
+    <h1>10 lessons I learned at <span class="accent">Google</span></h1>
     <div class="author">
       Jason Xu
     </div>
@@ -373,105 +394,62 @@
 
   <!-- Slide 2: Lesson 1 - User Obsession -->
   <section class="slide left" data-title="01 · User Obsession">
-    <h1>1. The best engineers are obsessed<br/>with solving user problems.</h1>
+    <h1>1. The best engineers are obsessed with solving user problems.</h1>
     <img src="images/steve_ballmer_yelling.jpg" alt="Steve Ballmer yelling developers" class="ballmer-large" onerror="this.style.display='none'" />
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> A touching movie is based on personal experience, but about the character. Best PMs aren't building for themselves, they see an user pain point and try to address them.
-      </p>
-    </div>
   </section>
 
   <!-- Slide 3: Lesson 2 - Value of Time -->
   <section class="slide left" data-title="02 · Value of Time">
-    <h1>2. Eventually, time becomes worth<br/>more than money.</h1>
-    <img src="images/google_cafeteria.jpg" alt="Google cafeteria free food" class="slide-image" onerror="this.style.display='none'" />
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> There are some problems money can solve, and some things only time can resolve—learn to tell the difference. Eventually, you realize that money can always be found, but time never can.
-      </p>
-    </div>
+    <h1>2. Eventually, time becomes more valuable than money.</h1>
+    <img src="images/goodharts_law.jpg" alt="Goodhart's Law" class="slide-image" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 4: Lesson 3 - Decision Velocity -->
   <section class="slide left" data-title="03 · Type 1 vs. Type 2 Decisions">
     <h1>3. Bias towards action. Ship.</h1>
     <img src="images/decision_doors.jpg" alt="Type 1 vs Type 2 Decisions" class="slide-image" onerror="this.style.display='none'" />
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> Understand the difference between Type 1 and Type 2 decisions to unlock velocity and resolution.
-      </p>
-    </div>
   </section>
 
   <!-- Slide 5: Lesson 4 - Compounding -->
   <section class="slide left" data-title="04 · Compounding">
-    <h1>4. There are no shortcuts,<br/>but there is compounding.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> You can rely on brute force and high-power algorithms, but the true return comes from knowing what worked, what didn’t, and how to apply it next time. Compounding experience is the highest ROI.
-      </p>
-    </div>
+    <h1>4. There are no shortcuts, but there is compounding.</h1>
+    <img src="images/compounding.jpg" alt="Compounding" class="slide-image" style="width: clamp(38rem, 68vh, 60rem); height: clamp(21.4rem, 38vh, 33.75rem);" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 6: Lesson 5 - Getting to Right Together -->
   <section class="slide left" data-title="05 · Getting to Right Together">
-    <h1>5. Being right is cheap. Getting to<br/>right together is the real work.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> There are a lot of smart people at Google and they’re mostly right. Focusing that intelligence onto a real problem is where things really pay off.
-      </p>
-    </div>
+    <h1>5. Being right is cheap. Getting to right together is the real work.</h1>
+    <img src="images/alignment_is_speed.jpg" alt="Alignment is Speed" class="slide-image" style="width: clamp(38rem, 68vh, 60rem); height: clamp(24rem, 43vh, 38rem); object-position: center 20%;" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 7: Lesson 6 - Alignment is Speed -->
   <section class="slide left" data-title="06 · Alignment is Speed">
-    <h1>6. Most “slow” teams are actually<br/>misaligned teams.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> Velocity is lost in handoffs and conflicting priorities. Clarifying interfaces, direction, and priorities is the ultimate speed hack.
-      </p>
-    </div>
+    <h1>6. Most “slow” teams are actually misaligned teams.</h1>
+    <img src="images/getting_to_right_together.jpg" alt="Getting to Right Together" class="slide-image" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 8: Lesson 7 - Admitting What You Don't Know -->
   <section class="slide left" data-title="07 · Safety through Vulnerability">
     <h1>7. Admitting what you don’t know creates more safety than pretending you do.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> When you're in a room with many smart people, sometimes it’s better to just say: "Hey, I’m not sure what the best approach here is, what do you think?"
-      </p>
-    </div>
+    <img src="images/admitting_ignorance_new.png" alt="Admitting Ignorance" class="slide-image" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 9: Lesson 8 - Goodhart's Law -->
   <section class="slide left" data-title="08 · Goodhart's Law">
     <h1>8. When a measure becomes a target, it stops measuring.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> When you have really smart people, simple metrics don't work, it quickly becomes a game. Google tried to solve this with "OKRs," but they have since become the new "KPIs."
-      </p>
-    </div>
+    <img src="images/goodharts_law_graph.png" alt="Goodhart's Law Graph" class="slide-image" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 10: Lesson 9 - Clarity over Complexity -->
   <section class="slide left" data-title="09 · Clarity over Complexity">
     <h1>9. Clarity is seniority. Cleverness is overhead.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> This happens very often at Google: everyone is smart and wants to prove themselves by re-implementing an existing system with a different trade-off. Optimize for comprehension, not elegance. Choose boring, standard, well-understood tools where you are not uniquely paid to innovate.
-      </p>
-    </div>
+    <img src="images/clarity_is_seniority.jpg" alt="MapReduce Flow" class="slide-image" style="width: clamp(38rem, 68vh, 60rem); height: clamp(21.4rem, 38vh, 33.75rem);" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 11: Lesson 10 - Think 100x -->
   <section class="slide left" data-title="10 · Think 100x">
     <h1>10. Think 100x.</h1>
-    <div class="body" style="margin-top: 1.5rem;">
-      <p class="muted">
-        <strong>Personal Learning:</strong> When looking at things at 100x scale, everything is magnified, what works and what doesn't. This helps you better understand what you're building and the trade-offs you made, implicitly or explicitly. Also, if you're lucky and it does become 100x, you're already ahead of the competition.
-      </p>
-    </div>
+    <img src="images/scale_learning.jpg" alt="Think 100x scale" class="slide-image" onerror="this.style.display='none'" />
   </section>
 
   <!-- Slide 12: Outro / Q&A -->
